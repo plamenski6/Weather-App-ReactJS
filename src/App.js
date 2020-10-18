@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 
-const api = {
-  key: "44567abe4f21f564e27dd15195411dd1",
-  base: "https://api.openweathermap.org/data/2.5/"
-}
-
 function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
   const search = e => {
     if (e.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+      fetch(`${process.env.REACT_APP_BACKEND_URL}weather?q=${query}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
         .then(response => response.json())
         .then(result => {
           setWeather(result);
@@ -33,7 +28,7 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <div className={(typeof weather.main !== "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
       <main>
         <div className="search-box">
           <input type="text"
@@ -56,11 +51,19 @@ function App() {
             </div>
             <div className="weather-box">
               <div className="temp">
-                15c
-          </div>
+                {Math.round(weather.main.temp)}°c
+              </div>
               <div className="weather">
-                Sunny
-          </div>
+                {weather.weather[0].main}
+              </div>
+              <div className="weather-description">
+                ({weather.weather[0].description})
+              </div>
+              <div className="weather-details"> 
+                <p>Feels like: {Math.round(weather.main.feels_like)}°c</p>
+                <p>Humidity: {weather.main.humidity}</p>
+                <p>Pressure: {weather.main.pressure}</p>
+              </div>
             </div>
           </div>
         ) : ('')}

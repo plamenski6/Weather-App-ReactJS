@@ -27,7 +27,7 @@ main {
 
 .search-box {
   width: 100%;
-  margin: 0 0 75px;
+  margin: 0 0 70px;
 }
 
 .search-box .search-bar {
@@ -75,13 +75,13 @@ main {
 .weather-box .temp {
   position: relative;
   display: inline-block;
-  margin: 30px auto;
+  margin: 10px auto;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
-  padding: 15px 25px;
+  padding: 15px;
   color: #FFF;
   font-size: 100px;
-  font-weight: 900;
+  font-weight: 800;
   text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
@@ -92,4 +92,22 @@ main {
   font-size: 48px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.weather-box .weather-description {
+  color: #FFF;
+  font-size: 20px;
+  text-shadow: 1px 1px rgba(50, 50, 70, 0.5);
+}
+
+.weather-box .weather-details {
+  display: flex;
+  color: #FFF;
+  margin-top: 20px;
+  text-shadow: 1px 1px rgba(50, 50, 70, 0.5);
+  justify-content: space-evenly;
+}
+
+.weather-box .weather-details p {
+  padding: 0px 10px;
 }
