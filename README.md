@@ -1,6 +1,6 @@
 ## FOR THE APP
 ### This is Weather app in React.js, using the Open Weather Map API to make calls to a restful api to return the current weather data. This uses the Modern Javascript Fetch AP along with React hooks and conditonals.
-To start and enjoy the app, you can access it from this link: https://weather-mobile-reactjs.web.app
+To start and enjoy the app, you can access it from this link: https://weather-mobile-reactjs.web.app <br/>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
